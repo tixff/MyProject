@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jfinal_demo_for_maven:war exploded">
+    <output-path>$PROJECT_DIR$/target/jfinal_demo_for_maven</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jfinal_demo_for_maven" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.jfinal:jetty-server:2018.11" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-webapp:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-xml:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-servlet:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-security:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-server:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-http:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-io:9.4.12.v20180830" />
+          <element id="library" level="project" name="Maven: com.jfinal:jfinal:3.5" />
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.2.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-nop:1.7.25" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.44" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.29" />
+          <element id="library" level="project" name="Maven: com.jfinal:cos:2017.5" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/jfinal_demo_for_maven/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="jfinal_demo_for_maven/web/Web" />
+    </root>
+  </artifact>
+</component>
