@@ -30,10 +30,31 @@ public class InfoController extends Controller {
         Info info = service.findByNameAndPassword(name, password);
         if (info != null) {
             render("success.html");
+        }else {
+            service.addInfo(name,password);
+            setAttr("erro", "login erro");
+            render("login.html");
         }
-        System.out.println(info);
 
 
+    }
+
+    public void register(){
+        render("regist.html");
+    }
+    public void regist(){
+        HttpServletRequest request = getRequest();
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        Info info = service.findByName(name);
+        if(info!=null){
+            setAttr("erro","此用户已被注册");
+            render("regiet.html");
+        }else {
+            service.addInfo(name,password);
+            setAttr("erro","注册成功");
+            render("login.html");
+        }
     }
     /*public void hello(){
 
