@@ -75,6 +75,7 @@ public class DemoConfig extends JFinalConfig {
 		// 所有映射在 MappingKit 中自动化搞定
 		_MappingKit.mapping(arp);
 		_MappingKit.mappInfo(arp);
+		_MappingKit.mappBLogType(arp);
 		me.add(arp);
 	}
 	

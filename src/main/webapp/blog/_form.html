@@ -1,16 +1,43 @@
 <fieldset class="solid">
-	<legend>创建Blog</legend>
-	<input type="hidden" name="blog.id" value="#(blog.id??)" />
-	<div>
-		<label>标题</label>
-		<input type="text" name="blog.title" value="#(blog.title??)" />#(titleMsg)
-	</div>
-	<div>
-		<label>内容</label>
-		<textarea name="blog.content" cols="80" rows="10">#(blog.content??)</textarea>#(contentMsg)
-	</div>
-	<div>
-		<label>&nbsp;</label>
-		<input value="提交" type="submit">
-	</div>
+    <legend>创建Blog</legend>
+    <input type="hidden" name="blog.id" value="#(blog.id??)"/>
+    <div>
+        <label>标题</label>
+        <input type="text" name="blog.title" value="#(blog.title??)"/>#(titleMsg)
+    </div>
+
+    <div>
+        <label>类型</label>
+        <select name="blog.type" >
+            #for(x : typeList)
+                #if(blog!=null)
+                    #if(x.getId()==blog.getType())
+                        <option value="#(x.getId())" selected="selected">#(x.getName())</option>
+                    #else
+                        <option value="#(x.getId())" >#(x.getName())</option>
+                    #end
+                #else
+                    <option value="#(x.getId())" >#(x.getName())</option>
+                #end
+            #end
+        </select>
+    </div>
+    #if(blog!=null)
+    <div>
+        <label>创建时间</label>
+        <input type="text" readonly="readonly" style="background: #0099CC" name="blog.createTime" value="#(blog.createTime)" />
+    </div>
+    #end
+    <div>
+        <label>内容</label>
+        <textarea name="blog.content" cols="80" rows="10">#(blog.content??)</textarea>#(contentMsg)
+    </div>
+    <div>
+        <label>&nbsp;</label>
+        <input value="提交" type="submit">
+    </div>
 </fieldset>
+
+<script>
+
+</script>

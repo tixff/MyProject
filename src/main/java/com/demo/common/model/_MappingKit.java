@@ -22,5 +22,9 @@ public class _MappingKit {
     public static void mappInfo(ActiveRecordPlugin arp) {
         arp.addMapping("info", "id", Info.class);
     }
+
+    public static void mappBLogType(ActiveRecordPlugin arp){
+        arp.addMapping("blog_type","id",BlogType.class);
+    }
 }
 
