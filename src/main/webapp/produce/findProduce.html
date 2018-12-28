@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>produce数据</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        function getProduce() {
+            $.post("/produce/findProduce", function (d) {
+                console.log(d.count);
+                console.log(d.topic_name);
+                console.log(d.produce_time);
+                console.log("json数据:"+d);
+
+            });
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button onclick="getProduce()">获取数据</button>
+</body>
+</html>

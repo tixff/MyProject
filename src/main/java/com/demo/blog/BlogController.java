@@ -5,7 +5,6 @@ import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.demo.common.model.Blog;
-import com.jfinal.plugin.activerecord.Db;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json格式数据</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        function getInfo() {
+            //获取所有主题
+            $.post("/info/jsonInfo", function (d) {
+                console.log("json数据:"+d);
+                console.log("name:"+d.name);
+                console.log("password:"+d.password);
+            });
+        }
+    </script>
+</head>
+<body>
+<button onclick="getInfo()">获取数据</button>
+</body>
+</html>

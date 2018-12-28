@@ -23,6 +23,9 @@ public class _MappingKit {
         arp.addMapping("info", "id", Info.class);
     }
 
+    public static void mappProduce(ActiveRecordPlugin arp){
+        arp.addMapping("produce", "id", Produce.class);
+    }
     public static void mappBLogType(ActiveRecordPlugin arp){
         arp.addMapping("blog_type","id",BlogType.class);
     }

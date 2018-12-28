@@ -1,5 +1,6 @@
 package com.demo.info;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.demo.blog.BlogService;
 import com.demo.blog.BlogValidator;
 import com.demo.common.model.Blog;
@@ -7,6 +8,7 @@ import com.demo.common.model.Info;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.JsonKit;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +19,19 @@ public class InfoController extends Controller {
     public void index() {
         //setAttr("blogPage", service.paginate(getParaToInt(0, 1), 10));
         render("login.html");
+    }
+
+    /**
+     * 测试ajax请求
+     *
+     * @return
+     */
+    public void jsonInfo() {
+
+        String json = "{id:1,name:\"tom\",password:\"123456\"}";
+
+        //String json = JsonKit.toJson(new Info("jerry", "123456"));
+        renderJson(json);
     }
 
     public void add() {
@@ -30,8 +45,8 @@ public class InfoController extends Controller {
         Info info = service.findByNameAndPassword(name, password);
         if (info != null) {
             render("success.html");
-        }else {
-            service.addInfo(name,password);
+        } else {
+            service.addInfo(name, password);
             setAttr("erro", "login erro");
             render("login.html");
         }
@@ -39,20 +54,21 @@ public class InfoController extends Controller {
 
     }
 
-    public void register(){
+    public void register() {
         render("regist.html");
     }
-    public void regist(){
+
+    public void regist() {
         HttpServletRequest request = getRequest();
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         Info info = service.findByName(name);
-        if(info!=null){
-            setAttr("erro","此用户已被注册");
+        if (info != null) {
+            setAttr("erro", "此用户已被注册");
             render("regiet.html");
-        }else {
-            service.addInfo(name,password);
-            setAttr("erro","注册成功");
+        } else {
+            service.addInfo(name, password);
+            setAttr("erro", "注册成功");
             render("login.html");
         }
     }
